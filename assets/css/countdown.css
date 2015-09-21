@@ -1,0 +1,13 @@
+.countdown-holder {
+	text-align: center;
+	
+}
+
+#countdown {
+	padding: 25px 10px;
+	font-size: 1.8em;
+}
+
+.countdown-holder span {
+	font-weight: 600;
+}
