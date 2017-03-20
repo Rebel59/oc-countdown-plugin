@@ -1,24 +1,7 @@
 {% if not error %}
 <div class="countdown-holder">
-	<div id="countdown"></div>	
-	{% if comment %}
-	<div class="message">
-		{{comment|raw}}
-	</div>
-	{% endif %}
+    <div id="countdown">
+
+    </div>
 </div>
-{% put scripts %}
-<script type="text/javascript">
-$('#countdown').countdown('{{date}}').on('update.countdown', function(event) {
-   var $this = $(this).html(event.strftime(''
-     + '<span>%-w</span> %!w:week,weken; '
-     + '<span>%-d</span> %!d:dag,dagen; '
-     + '<span>%H</span> uur '
-     + '<span>%M</span> min '
-     + '<span>%S</span> sec'));
- });
-</script>
-{%endput%}
-{%else%}
-<div><strong>You've made an error. Have you defined a date in the settings menu?</strong></div>
 {%endif%}
