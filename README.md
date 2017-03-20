@@ -4,10 +4,24 @@ A simple yet powerful plugin to display countdowns on your OctoberCMS website.
 ### Dependencies
 - OctoberCMS framework for the Ajax Call: `{% framework extras %}`
 - jQuery (Tested with 3.2.0, should work with others.)
+- [jQuery.Countdown](http://hilios.github.io/jQuery.countdown/)
 
 ### Usage
 
 Drag and drop the `Countdown` component into your page and set the date property. This property should match the format of a Javascript DateTime object (`YYYY/MM/DD HH:MM:SS`).
+
+You can choose which libraries you would like to load, to prevent duplicate asset loading. 
+
+If you want to customise the countdown parameters see the jQuery.Countdown documentation. The date is loaded through an Ajax call `onCountdownDate`. 
+
+    $.request('onCountdownDate',{
+        success: function(data){
+            $('#countdown').countdown(data.date).on('update.countdown', function(event) {
+                // do countdown related things here.
+                $('#countdown').addClass('show');
+            });
+        }
+    })
 
 ---
 
